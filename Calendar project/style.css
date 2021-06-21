@@ -1,0 +1,53 @@
+body {
+  background-image: url("./images/bg.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Varela Round", sans-serif;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  font-size: 72px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.calendar-box {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td {
+  text-align: center;
+}
+
+.calendar-area {
+  position: relative;
+}
+
+.arrow {
+  color: black;
+  text-decoration: none;
+  font-size: 35px;
+}
+
+.previous {
+  position: absolute;
+  bottom: 14%;
+  left: 35%;
+}
+
+.next {
+  position: absolute;
+  bottom: 14%;
+  right: 35%;
+}

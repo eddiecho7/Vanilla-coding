@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Carousel Project</title>
+  </head>
+
+  <body>
+    <section>
+      <div class="image-box">
+        <img src="images/vanilla_coding_logo.png" />
+      </div>
+      <h1>Carousel</h1>
+
+      <!-- Carousel Start -->
+      <div class="carousel">
+        <img class = "feature-image" src="images/image-1.png">
+        <a onclick = "prevImage()" class="arrow previous">&#8249;</a>
+        <a onclick = "nextImage()" class="arrow next">&#8250;</a>
+        <a onclick = "firstDot()" class="dot">&#183;</a>
+        <a onclick = "secondDot()" class="dot">&#183;</a>
+        <a onclick = "thirdDot()" class="dot">&#183;</a>
+        <a onclick = "fourthDot()" class="dot">&#183;</a>
+        <a onclick = "fifthDot()" class="dot">&#183;</a>
+      </div>
+
+      <!-- Carousel End -->
+    </section>
+
+    <script src="index.js"></script>
+  </body>
+</html>
