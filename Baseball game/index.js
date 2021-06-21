@@ -136,20 +136,3 @@ function init() {
 }
 
 
-/*
-TO DO:
-- Enhance UI / UX
-    - Re-think user interface 
-    - Add instructions
-
-- Fix bugs
-    - Doesn't work sometimes
-    - Not show up restart and result if wrong input
-
-- Refactor code
-    - Add comments
-    - Remove duplicates using arrays
-    - Structure functions 
-    
-*/
-
