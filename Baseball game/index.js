@@ -1,5 +1,11 @@
 var attempt = 0;
 
+function init() {
+    startButton();
+    document.querySelector("#inputBox").remove();
+    document.querySelector("#result").remove();
+    document.querySelector("#restart").remove();
+}
 
 function startButton() {
     var startBtn = document.createElement("button");
@@ -25,13 +31,13 @@ function digitGenerator() {
 }
 
 function generateInput() {
-    //generate input box and button
+    //generate input box for user guess
     var inputBox = document.createElement("input");
     inputBox.id = "inputBox";
     document.querySelector(".game").appendChild(inputBox);
     inputBox.placeholder = "Input your guess as 3 digit number"
     
-    //upon entering press, check user guess and generate result table and restart button
+    //upon entering press, validate user guess and generate result table and restart button
     inputBox.addEventListener("keyup", function(event) {
         if (event.key === "Enter") {
             if (document.querySelector("#result") === null) {
@@ -46,21 +52,7 @@ function generateInput() {
     });
 }
 
-function generateRestart() {
-    var restart = document.createElement("input");
-    restart.type = "submit";
-    restart.value = "Restart";
-    restart.id = "restart";
-    document.querySelector(".game").insertBefore(restart, document.querySelector("#result"));
-    restart.onclick = function () {
-        removeElements();
-        startButton();
-    }
-}
-
-
 function generateHeader() {
-    //generate results table
     var result = document.createElement("table");
     result.id = "result";
     document.querySelector(".game").appendChild(result);
@@ -69,6 +61,17 @@ function generateHeader() {
     result.appendChild(thead);
     for(var i = 0; i < resultHeader.length; i++){
         thead.appendChild(document.createElement("th")).appendChild(document.createTextNode(resultHeader[i]));
+    }
+}
+
+function generateRestart() {
+    var restart = document.createElement("input");
+    restart.type = "submit";
+    restart.value = "Restart";
+    restart.id = "restart";
+    document.querySelector(".game").insertBefore(restart, document.querySelector("#result"));
+    restart.onclick = function () {
+        init();
     }
 }
 
@@ -84,7 +87,7 @@ function checkGuess() {
         alert("Please input distinct number as digits");
     }
     else {
-        //convert guess from string to number
+        //convert array elements to number to match ans data type
         for (i = 0; i < guess.length; i++) {
             guess[i] = parseInt(guess[i]);
         }
@@ -105,7 +108,7 @@ function runResult (guess) {
             }
         }
     }
-    //Fill in guess result
+    //Fill in result for each attempt
     attempt = attempt + 1; 
     var row = document.querySelector("#result").insertRow(attempt - 1);
     row.insertCell(0).innerHTML = attempt;
@@ -115,24 +118,12 @@ function runResult (guess) {
     //End after 10 attempt
     if (strike === 3) {
         alert ("You Won!");
-        removeElements();
         init();
     }
     else if (attempt > 10) {
         alert("Please try again");
-        removeElements();
         init();
     }
-}
-
-function removeElements() {
-    document.querySelector("#inputBox").remove();
-    document.querySelector("#result").remove();
-    document.querySelector("#restart").remove();
-}
-
-function init() {
-    startButton();
 }
 
 
